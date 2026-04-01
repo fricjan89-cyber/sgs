@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SGS</title>
+</head>
+
+<body style="text-align:center; font-family:sans-serif; margin-top:50px;">
+
+  <h2>SGS</h2>
+
+  <button id="registerBtn" style="padding:15px; font-size:18px;">REGISTER</button>
+  <br><br>
+  <button id="infoBtn" style="padding:15px; font-size:18px;">INFO</button>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const qr = params.get("qr");
+
+    const appId = "TVE_APP_ID"; // ← sem dáš svoje AppSheet ID
+
+    const registerUrl =
+      `https://www.appsheet.com/start/${appId}#view=REGISTER&defaults=%7B%22QR_TOKEN%22%3A%22${encodeURIComponent(qr)}%22%7D`;
+
+    document.getElementById("registerBtn").onclick = () => {
+      window.location.href = registerUrl;
+    };
+
+    document.getElementById("infoBtn").onclick = () => {
+      alert("INFO zatím není napojené");
+    };
+  </script>
+
+</body>
+</html>
