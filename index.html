@@ -17,7 +17,7 @@
     const params = new URLSearchParams(window.location.search);
     const qr = params.get("qr");
 
-    const appId = "TVE_APP_ID"; // ← sem dáš svoje AppSheet ID
+    const appId = "95e40879-a94a-483b-8965-679db3faeb3a";
 
     const registerUrl =
       `https://www.appsheet.com/start/${appId}#view=REGISTER&defaults=%7B%22QR_TOKEN%22%3A%22${encodeURIComponent(qr)}%22%7D`;
@@ -33,4 +33,3 @@
 
 </body>
 </html>
-<!-- deploy -->
